@@ -12,26 +12,5 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-
-let locationDep = '140 William Street, Perth Australie-Occidentale, Australie';
-let locationArr = '1400 Ivar Avenue, Los Angeles, Californie, États-Unis';
-const requestOptions = {
-  method: 'GET',
-  params: {
-    origins: locationDep,
-    destinations: locationArr,
-    units: 'metric',
-    key: 'AIzaSyCXGwyGwH8gZ8uE5524ZnX1vVcazbbIrKo',
-
-  },
-}
-fetch('https://maps.googleapis.com/maps/api/distancematrix/json',requestOptions)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  })
-
+app.use(express.static('public'));
 module.exports = app;
