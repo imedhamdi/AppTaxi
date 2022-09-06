@@ -4,3 +4,9 @@ margin: 1vw;
 #btnContinuer {
     visibility: hidden;
 }
+body{
+    background-image:url(bg.jpg);
+    background-size:auto auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
