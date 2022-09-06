@@ -3,11 +3,17 @@ function initAutocomplete() {
 
     new google.maps.places.Autocomplete(
         document.getElementById('autocomplete'),
-        { types: ['geocode'] }
+        {
+            types: ['geocode'],
+            componentRestrictions: { country: "fr" }
+        }
     );
     new google.maps.places.Autocomplete(
         document.getElementById('autocomplete1'),
-        { types: ['geocode'] }
+        {
+            types: ['geocode'],
+            componentRestrictions: { country: "fr" }
+        }
     );
 }
 
@@ -37,7 +43,23 @@ function afficherDistance() {
 function enregistrerAdresses() {
     let locationDep = document.getElementById('autocomplete').value;
     let locationArr = document.getElementById('autocomplete1').value;
-    localStorage.setItem('depart',locationDep);
-    localStorage.setItem('arrivee',locationArr);
+    localStorage.setItem('depart', locationDep);
+    localStorage.setItem('arrivee', locationArr);
     window.location.assign('contactClient.html')
+}
+
+
+function envoyerDemande() {
+    let nom = document.getElementById('nom').value;
+    let prenom = document.getElementById('prenom').value;
+    let telephone = document.getElementById('telephone').value;
+    let dateDepart = document.getElementById('dateDepart').value;
+    let heure = document.getElementById('heure').value;
+
+    let demandeClient = {
+        nomClient: nom,
+    }
+    console.log(typeof demandeClient);
+    console.log(demandeClient);
+
 }
