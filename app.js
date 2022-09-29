@@ -1,10 +1,13 @@
 const express = require('express');
 const fetch = require('node-fetch');
 var cors = require('cors');
-var morgan = require('morgan')
+var morgan = require('morgan');
+const dbConn = require('./dbConnect');
+const demandeCourses = require('./routeDemandes');
 const app = express();
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
+  ('Content-Security-Policy: script-src','self','https://apis.google.com');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
@@ -14,5 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use(express.static('public'));
-app.use(morgan('tiny'));
+app.use(express.static('folder'));
+app.use(morgan('dev'));
+app.use('/demandes', demandeCourses);
 module.exports = app;
