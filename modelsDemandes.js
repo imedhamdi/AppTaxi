@@ -30,16 +30,16 @@ Demande.searchAll = function (demande) {
 
 
 Demande.ajouterDemande = function (Newdemande, result) {
- 
-  dbConn.query("INSERT INTO demandes set ?",Newdemande,function (err, res) {
+
+  dbConn.query("INSERT INTO demandes set ?", Newdemande, function (err, res) {
     console.log('hello');
-    function envoyerMail(){
+    function envoyerMail() {
       console.log("Coucou depuis un mail");
       nodeoutlook.sendEmail({
 
         auth: {
-            user: "imedhamdi007@hotmail.fr",
-            pass: "imed25516242"
+          user: "imedhamdi007@hotmail.fr",
+          pass: "imed25516242"
         },
         from: "imedhamdi007@hotmail.fr",
         to: 'imedhamdi007@hotmail.fr',
@@ -47,21 +47,14 @@ Demande.ajouterDemande = function (Newdemande, result) {
         html: `${JSON.stringify(Newdemande)}`,
         text: 'This is text version!',
         replyTo: "",
-  
-  
+
+
         onError: (e) => console.log(e),
         onSuccess: (i) => res.send("Email envoyé")
-  
-  
+      }
+
+      );
     }
-  
-  
-    );
-    }
-    
-
-
-
 
     envoyerMail()
 
