@@ -1,142 +1,185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <title>Clacul de distance </title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link rel="stylesheet" href="index.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="DRIVEN : SYSTÈME DE RÉSERVATION EN LIGNE POUR LES SERVICES DE TAXI ET DE TRANSPORT,TAXI ET VTC À PARIS , MOYENS DE TRANSPORT PAS CHER À PARIS">
+	<title>Driven </title>
+
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="css/bootstrap-theme.css" media="screen">
+	<link rel="stylesheet" href="css/main.css">
+
+
 </head>
 
+<body class="home">
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="index.html"><img src="images/logo.png"
+						alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="about.html">Contact</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<!-- /.navbar -->
 
-<body>
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">on vous cherche là où vous êtes</h1>
+				<p class="tagline">DRIVEN: SYSTÈME DE RÉSERVATION EN LIGNE POUR LES SERVICES DE TAXI ET DE TRANSPORT</p>
+				<p><a class="btn btn-default btn-lg" role="button">Plus d'infos</a> <a class="btn btn-action btn-lg"
+						href="#reservation" role="button">Réserver</a></p>
+			</div>
+		</div>
+	</header>
+	<!-- /Header -->
 
-  <section>
-    <div class="logo">
-      <a href="index.html"><img src="logo.jpg" width="60" height="60" /></a>
-      <h4>Driven</h4>
-    </div>
-    <nav class="navigation">
-      <a href="index.html">Accueil</a>
-      <a href="#">À propos de nous</a>
-      <a href="#">Nous contacter</a>
-    </nav>
-    <div class="toggleBox">
-      <a onclick="showMenu()" href="#"><img width="30" height="30" src="menu.png" class="menu" /><img class="close"
-          width="30" height="30" src="close.png" /></a>
-    </div>
-  </section>
+	<!-- Intro -->
+	<div id="reservation" class="container text-center">
+		<br> <br>
+		<h2 class="thin">The best place to tell people why they are here</h2>
+		<div class="container">
+			<div class="container-fluid containerForm">
+				<label for="exampleFormControlInput1" class="form-label">Adresse de départ : </label>
+				<input type="text" class="form-control" id="autocomplete" placeholder="Entrez une adresse : ">
+			</div>
+			<div class="container-fluid containerForm">
+				<label for="exampleFormControlInput2" class="form-label">Adresse d'arrivée : </label>
+				<input type="text" class="form-control" id="autocomplete1" placeholder="Entrez une adresse : ">
+			</div>
+			<button id="btn" type="button" onclick="afficherDistance()" class="btn btn-primary">Afficher</button>
+			<button id="btnContinuer" onclick="enregistrerAdresses()" type="button"
+				class="btn btn-success">Continuer</button>
+			<h4 id="distance"></h4><br>
+			<h4 id="prix"></h4>
+		</div>
+	</div>
+	<!-- /Intro-->
 
-  <div class="jumbotron jumbotron-fluid">
+	<!-- Highlights - jumbotron -->
+	<div class="jumbotron top-space">
+		<div class="container">
 
-    <!-- <h1 class="display-4">Go_Dispatch</h1>
-      <p class="lead">Réservez votre VTC en toute simplicité, quand vous voulez! là où vous êtes !</p> -->
-    <img src="driven jumbotron.jpg" />
+			<h3 class="text-center thin">Simple à utiliser...</h3>
 
-  </div>
+			<div class="row">
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption">
+						<h4><i class="fa fa-solid fa-1">1</i>"REMPLIR LES ADRESSES DE DÉPART ET CELLE D'ARRIVÉE POUR AVOIR UNE ESTIMATION DE PRIX"</h4>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption">
+						<h4><i class="fa fa-solid fa-1">2</i>"REMPLIR LE FORMULAIRE DE CONTACT AVEC LES RENSEIGNEMENT EXACTES"</h4>
+					</div>
+					
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption">
+						<h4><i class="fa fa-solid fa-1">3</i>Creative Commons</h4>
+					</div>
+				
+				</div>
+				<div class="col-md-3 col-sm-6 highlight">
+					<div class="h-caption">
+						<h4><i class="fa fa-solid fa-1">4</i>Author's support</h4>
+					</div>
+					
+				</div>
+			</div> <!-- /row  -->
+
+		</div>
+	</div>
+	<!-- /Highlights -->
+
+	<!-- container -->
+	<div class="container">
+
+		<h2 class="text-center top-space">Frequently Asked Questions</h2>
+		<br>
 
 
-  <div class="container">
-    <label for="exampleFormControlInput1" class="form-label">Adresse de départ : </label>
-    <input type="text" class="form-control" id="autocomplete" placeholder="Entrez une adresse : ">
-    <label for="exampleFormControlInput2" class="form-label">Adresse d'arrivée : </label>
-    <input type="text" class="form-control" id="autocomplete1" placeholder="Entrez une adresse : ">
-    <button id="btn" type="button" onclick="afficherDistance()" class="btn btn-primary">Afficher</button>
-    <button id="btnContinuer" onclick="enregistrerAdresses()" type="button" class="btn btn-success">Continuer</button>
-    <h4 id="distance"></h4><br>
-    <h4 id="prix"></h4>
-  </div>
-  <!-- Footer -->
-  <footer class="text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
+		<div class="jumbotron top-space">
+			<h4>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni
+				ullam suscipit sunt atque rerum eaque iusto facilis esse nam veniam incidunt officia perspiciatis at
+				voluptatibus. Libero, aliquid illum possimus numquam fuga.</h4>
 
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
+		</div>
 
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
-            </h6>
-            <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-          <!-- Grid column -->
+	</div> <!-- /container -->
 
 
 
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              info@example.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-  </footer>
-  <!-- Footer -->
-  <script>
-    function showMenu() {
-      document.querySelector('.navigation').classList.toggle('active');
-      document.querySelector('.menu').classList.toggle('hide');
-      document.querySelector('.close').classList.toggle('show');
-    }
-  </script>
+	<footer id="footer" class="top-space">
 
-  <script src="apiKey.js" async defer></script>
-  <script src="accueilClient.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>+234 23 9873237<br>
+								<a href="mailto:imedhamdi007@hotmail.fr">Mail</a><br>
+								<br>
+								234 Hidden Pond Road, Ashland City, TN 37015
+							</p>
+						</div>
+					</div>
+
+
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					<p class="text-right">
+						Copyright &copy; 2022, Designed by Driven&Co
+					</p>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+	</footer>
+
+
+	<script async defer src="apiKey.js">
+	</script>
+	<script src="accueilClient.js"></script>
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="js/headroom.min.js"></script>
+	<script src="js/jQuery.headroom.min.js"></script>
+	<script src="js/template.js"></script>
 </body>
 
 </html>
