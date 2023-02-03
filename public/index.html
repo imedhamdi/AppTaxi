@@ -7,16 +7,10 @@
 	<meta name="description"
 		content="DRIVEN : SYSTÈME DE RÉSERVATION EN LIGNE POUR LES SERVICES DE TAXI ET DE TRANSPORT,TAXI ET VTC À PARIS , MOYENS DE TRANSPORT PAS CHER À PARIS">
 	<title>Driven </title>
-
 	<link rel="shortcut icon" href="images/logo.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-
-	<!-- Custom styles for our template -->
-	<link rel="stylesheet" href="css/bootstrap-theme.css" media="screen">
 	<link rel="stylesheet" href="css/main.css">
-
 
 </head>
 
@@ -26,7 +20,7 @@
 		<div class="container">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span
+				<button type="button" class="navbar-toggle" data-toggle="collapse" aria-label="Menu" data-target=".navbar-collapse"><span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<a class="navbar-brand" href="index.html"><img src="images/logo.png"
 						alt="Progressus HTML5 template"></a>
@@ -71,8 +65,8 @@
 			<button id="btn" type="button" onclick="afficherDistance()" class="btn btn-primary">Afficher</button>
 			<button id="btnContinuer" onclick="enregistrerAdresses()" type="button"
 				class="btn btn-success">Continuer</button>
-			<h4 id="distance"></h4><br>
-			<h4 id="prix"></h4>
+			<h3 id="distance"></h3><br>
+			<h3 id="prix"></h3>
 		</div>
 	</div>
 	<!-- /Intro-->
@@ -86,27 +80,29 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption">
-						<h4><i class="fa fa-solid fa-1">1</i>"REMPLIR LES ADRESSES DE DÉPART ET CELLE D'ARRIVÉE POUR AVOIR UNE ESTIMATION DE PRIX"</h4>
+						<i class="fa fa-solid fa-1">1</i><q>REMPLIR LES ADRESSES DE DÉPART ET CELLE D'ARRIVÉE POUR AVOIR
+							UNE ESTIMATION DE PRIX</q>
 					</div>
-					
+
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption">
-						<h4><i class="fa fa-solid fa-1">2</i>"REMPLIR LE FORMULAIRE DE CONTACT AVEC LES RENSEIGNEMENT EXACTES"</h4>
+						<h4><i class="fa fa-solid fa-1">2</i>"REMPLIR LE FORMULAIRE DE CONTACT AVEC LES RENSEIGNEMENT
+							EXACTES"</h4>
 					</div>
-					
+
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption">
 						<h4><i class="fa fa-solid fa-1">3</i>Creative Commons</h4>
 					</div>
-				
+
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption">
 						<h4><i class="fa fa-solid fa-1">4</i>Author's support</h4>
 					</div>
-					
+
 				</div>
 			</div> <!-- /row  -->
 
@@ -122,9 +118,9 @@
 
 
 		<div class="jumbotron top-space">
-			<h4>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni
+			<p>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni
 				ullam suscipit sunt atque rerum eaque iusto facilis esse nam veniam incidunt officia perspiciatis at
-				voluptatibus. Libero, aliquid illum possimus numquam fuga.</h4>
+				voluptatibus. Libero, aliquid illum possimus numquam fuga.</p>
 
 		</div>
 
@@ -169,9 +165,9 @@
 	</footer>
 
 
-	<script async defer src="apiKey.js">
+	<script async defer src="js/autocomplete.js">
 	</script>
-	<script src="accueilClient.js"></script>
+	<script src="js/accueilClient.js"></script>
 
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
